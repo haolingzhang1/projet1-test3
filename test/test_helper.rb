@@ -7,7 +7,7 @@ class StudentTest < ActiveSupport::TestCase
 
   test "should have the necessary required validators" do
 
-    student = Student.new
+    student = student.new
 
     assert_not student.valid?
 
