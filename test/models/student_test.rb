@@ -6,7 +6,7 @@ class StudentTest < ActiveSupport::TestCase
   # end
   # test/models/student_test.rb
 test "should have numeric score" do
-  student = :: Student.new
+  student = Student.new
   assert_not student.valid?
   assert_equal [:name, :last_name], student.errors.keys
 
