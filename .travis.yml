@@ -1,6 +1,30 @@
-language: ruby
+langugae: ruby
+
 rvm:
+
  - 2.3.3
+<<<<<<< HEAD
+ 
+before_script:
+
+ - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+
+ - chmod +x ./cc-test-reporter
+
+ - ./cc-test-reporter before-build
+
+script:
+
+ - bundle exec rails db:migrate RAILS_ENV=test
+
+ - bundle exec rake
+
+after_script:
+
+ - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+  
+=======
 before_script:
  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
  - chmod +x ./cc-test-reporter
@@ -10,3 +34,4 @@ script:
  - bundle exec rake
 after_script:
  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+>>>>>>> 703faa7733c24f8a8191a453b8394f534ffe0b98
